@@ -1,0 +1,67 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/Actors/boss.gd"
+}, {
+"base": "Area2D",
+"class": "Laser",
+"language": "GDScript",
+"path": "res://src/Actors/laser.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/Actors/player.gd"
+}, {
+"base": "Area2D",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://src/Actors/projectile.gd"
+}, {
+"base": "Camera2D",
+"class": "WorldCamera",
+"language": "GDScript",
+"path": "res://src/camera.gd"
+} ]
+_global_script_class_icons={
+"Enemy": "",
+"Laser": "",
+"Player": "",
+"Projectile": "",
+"WorldCamera": ""
+}
+
+[application]
+
+config/name="SingularBossFight"
+run/main_scene="res://src/world.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemies"
+2d_physics/layer_3="attacks"
+2d_physics/layer_4="world"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
